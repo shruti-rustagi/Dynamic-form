@@ -1,0 +1,32 @@
+<%- include("header") -%>
+<form method ="post" action="/submit">
+	<%feilds.map(function(feild){ %>
+	
+	<% if (feild.type === "checkbox"){%>
+		<div class="form-check">
+		  <input type="<%= feild.type%>" class="form-check-input" name="checked">
+	      <label class= "form-check-label"><%= feild.label %> </label>
+	    </div>
+	<%} else if(feild.type ==="textarea"){%>
+	 <div class="form-group">
+		<label><%= feild.label %> </label>
+   		<textarea class="form-control" name="<%=feild.label%>" rows="3"></textarea>
+   		</div>
+	<%} else if(feild.type==="radio"){ %>
+		<div class="form-check">
+		  <input type="<%= feild.type%>" class="form-check-input" id="<%=feild.label%>" class="form-control" name="<%=feild.type%>" value="<%=feild.label%>">
+	      <label for="<%=feild.label%>" class="form-check-label"><%= feild.label %> </label>
+	    </div>
+
+	<%}else{ %>
+	<div class = "form-group">
+		<label><%= feild.label %> </label>
+   		<input type="<%= feild.type%>" placeholder="Enter <%= feild.label %>" class="form-control" name="<%=feild.label%>" autocomplete="off">
+    </div>
+	<%}}); %>
+	 <button type="submit" class="btn btn-primary">Submit</button>
+	  </form>
+	
+	
+<%- include("footer") -%>
+

@@ -1,0 +1,15 @@
+<%- include("header") -%>
+
+<div class="jumbotron">
+  <h1 class="display-4">Form Submitted</h1>
+  <p class="lead">You can add another response or create a new form by giving feilds</p>
+  <hr class="my-4">
+  <form action = "/newResponse" method = "post">
+  <button type="submit" class="btn btn-primary btn-lg" >Add another Response </button>
+  </form>
+   <form action = "/newForm" method = "post">
+  <button type="submit" class="btn btn-primary btn-lg" >Create new form </button>
+  </form>
+</div>
+
+<%- include("footer") -%>
